@@ -4,11 +4,17 @@ A standard baseline suite for comparing agent runtimes: the same
 capacity and environment checks run on every candidate setup, so
 numbers are grounded in the same measurements instead of vendor claims.
 
-Results reporting uses benchsync — on import it snapshots the run
-environment (including agent runtime context variables, so runs are
-attributable to the agent build that produced them) and pushes results
-to the shared results repo (ChaosLabsInc/agent-eval-results), the same
-pattern as CI coverage uploaders.
+Results reporting uses benchsync — it registers the run environment on
+import and syncs results to the private results repo
+(ChaosLabsInc/agent-eval-results; leaderboard snapshots are published
+from it periodically). `JARVIS_TRACE_CONTEXT` carries the agent build
+and run identifiers — the leaderboard's core comparison is across
+agent builds, so platform info alone cannot attribute a run; capture
+is an explicit allowlist (see the benchsync README).
+
+`companionhub.dev` is Chaos Labs' package index
+(see ChaosLabsInc/companion-hub); wheels are hash-pinned in
+`requirements-dev.txt`.
 
 ## Run
 
