@@ -1,3 +1,3 @@
 pytest>=7
 benchsync @ https://companionhub.dev/packages/benchsync-0.4.0-py3-none-any.whl#sha256=a7e4179a3a7af5523af7cc764ca53039ddd74e7b883ce02936e6aae6d7198d45
-baseline-utils @ https://companionhub.dev/packages/baseline_utils-0.2.0-py3-none-any.whl#sha256=
+baseline-utils @ https://companionhub.dev/packages/baseline_utils-0.2.0-py3-none-any.whl#sha256=9479c9d3f3a8e3055b4951f44df4cd6b90d5163d457a5bad0b053517b8ab582c
