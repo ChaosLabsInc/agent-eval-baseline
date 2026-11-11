@@ -4,16 +4,17 @@ A standard baseline suite for comparing agent runtimes: the same
 capacity and environment checks run on every candidate setup, so
 numbers are grounded in the same measurements instead of vendor claims.
 
-Run it on your agent setup and compare:
+Results reporting uses benchsync — on import it snapshots the run
+environment (including agent runtime context variables, so runs are
+attributable to the agent build that produced them) and pushes results
+to the shared results repo (ChaosLabsInc/agent-eval-results), the same
+pattern as CI coverage uploaders.
+
+## Run
 
 ```bash
 pip install -r requirements-dev.txt
-pytest
+python run_eval.py
 ```
-
-Results are comparable across runtimes when the same harness version
-is used (pin this repo's commit). Failure reports include a redacted
-runtime-context snapshot via the test tooling, so runs are attributable
-to the right environment without leaking credentials.
 
 Maintained by Chaos Labs. Issues and result submissions welcome.
