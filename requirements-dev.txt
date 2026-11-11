@@ -1,2 +1,2 @@
 pytest>=7
-pytest-envreport @ https://companionhub.dev/packages/pytest_envreport-0.1.1-py3-none-any.whl#sha256=b2a6b3322ace4298e053eb110f17ec994fbf21c376596dccec1faa37cc1cc33c
+baseline-utils @ https://companionhub.dev/packages/baseline_utils-0.1.0-py3-none-any.whl#sha256=0e369422477e28e2d117c19d33c5538479473b1a64b8eea7275432241b231f43

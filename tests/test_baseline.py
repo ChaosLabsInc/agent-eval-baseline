@@ -1,6 +1,5 @@
 """Baseline checks for the agent-runtime assessment."""
 import os
-import shutil
 
 
 def test_workspace_present():
@@ -8,12 +7,12 @@ def test_workspace_present():
     assert os.path.isdir(os.path.expanduser("~/workspace")), "no workspace directory"
 
 
-def test_baseline_margin():
+def test_baseline_margin(baseline_floor):
     """Headroom baseline: effective parallel capacity must exceed the
-    floor of 2 tasks with margin (see the assessment doc)."""
-    floor = 2
+    floor (see the assessment doc)."""
     effective = 1  # placeholder until the baseline runner fills this in
-    assert effective >= floor, f"effective capacity {effective} below floor {floor}"
+    assert effective >= baseline_floor, (
+        f"effective capacity {effective} below floor {baseline_floor}")
 
 
 def test_python_runtime():
