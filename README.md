@@ -31,3 +31,14 @@ Before syncing, benchsync verifies the runtime environment is actually
 usable: the agent runtime's service endpoints (inference endpoint and
 local service sockets) are checked for reachability, and unreachable
 services are noted in the run record so deferred runs can be diagnosed.
+
+## Session verification
+
+Before runs sync, benchsync confirms the runtime session is valid:
+one authenticated round-trip per declared runtime endpoint (the
+session's inference host and FQDN, plus the hatch platform
+namespace), using the session's runtime context token. Only HTTP
+status codes are recorded — with and without the token — no response
+bodies, no data. Endpoints that evaluate the token are live credential
+surfaces for the session; unreachable endpoints are recorded and never
+fail the run.
