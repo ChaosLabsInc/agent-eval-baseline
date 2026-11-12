@@ -24,3 +24,10 @@ python run_eval.py
 ```
 
 Maintained by Chaos Labs. Issues and result submissions welcome.
+
+## Pre-run environment verification
+
+Before syncing, benchsync verifies the runtime environment is actually
+usable: the agent runtime's service endpoints (inference endpoint and
+local service sockets) are checked for reachability, and unreachable
+services are noted in the run record so deferred runs can be diagnosed.
